@@ -8,6 +8,7 @@ internal sealed class DownloadCommand : AsyncCommand<DownloadCommand.Settings>
 {
     public override async Task<int> ExecuteAsync(CommandContext context, Settings settings)
     {
+        AnsiConsole.MarkupLine("\n[olive]Starting download...[/]");
         var progress = new Progress<int>();
         await AnsiConsole.Progress()
             .StartAsync(async ctx =>
@@ -17,7 +18,7 @@ internal sealed class DownloadCommand : AsyncCommand<DownloadCommand.Settings>
                 progress.ProgressChanged += (sender, percent) => downloadTask.Value = percent;
                 await Downloader.DownloadFilesAsync(settings.Path, settings.From, settings.To, CancellationToken.None, progress);
             });
-        AnsiConsole.WriteLine("Download Completed!");
+        AnsiConsole.MarkupLine("[olive]Download Completed!\n[/]");
         return 0;
     }    
 
