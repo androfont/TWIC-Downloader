@@ -24,12 +24,15 @@ internal sealed class DownloadCommand : AsyncCommand<DownloadCommand.Settings>
 
     public sealed class Settings : CommandSettings
     {
+        [Description("Indicates file number to start.")]
         [CommandArgument(0, "[from]")]
         public int From { get; set; }
 
+        [Description("Indicates file number to finish up (Included).")]
         [CommandArgument(0, "[to]")]
         public int To { get; set; }
 
+        [Description("Path to save files. Defaults to current directory.")]
         [CommandOption("-p|--path")]
         [DefaultValue("")]
         public string Path { get; set; }
