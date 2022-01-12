@@ -22,3 +22,8 @@ To download files from 1000 to 1024 and save in current directory you can use
 In the same way you can specify a path absolute or relative to define where to save the files
 
 ``TwicDownloader.exe 1000 1024 -p C:\TwicFiles``
+
+## Pending features
+- [ ] Save last downloaded file and provide an option to check it.
+- [ ] Use second argument optionally and download till last file automatically.
+- [ ] Use last downloaded as default first parameter too.
