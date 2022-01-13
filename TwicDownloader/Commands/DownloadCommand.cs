@@ -20,7 +20,7 @@ internal sealed class DownloadCommand : AsyncCommand<DownloadCommand.Settings>
             });
         AnsiConsole.MarkupLine("[olive]Download Completed!\n[/]");
         return 0;
-    }    
+    }
 
     public sealed class Settings : CommandSettings
     {
